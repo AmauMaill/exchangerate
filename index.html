@@ -18,13 +18,39 @@
       </div>
 
       <div class="swap-rate">
-        <button class="btn" id="rate">Swap</button>
+        <button class="btn" id="swap">Swap</button>
         <div class="rate" id="rate"></div>
       </div>
 
       <div class="currency">
         <select name="" id="currency-two"></select>
         <input type="number" id="amount-two" placeholder="0" value="1" />
+      </div>
+
+      <div class="convert">
+        <button class="btn" id="convert">Convert</button>
+      </div>
+
+      <hr />
+
+      <div class="api-keys">
+        <h2>API Keys</h2>
+        <div class="api-key">
+          <label for="currency-api-key">Currency API Key:</label>
+          <input
+            type="text"
+            id="currency-api-key"
+            placeholder="Enter currency API key"
+          />
+        </div>
+        <div class="api-key">
+          <label for="conversion-api-key">Conversion API Key:</label>
+          <input
+            type="text"
+            id="conversion-api-key"
+            placeholder="Enter conversion API key"
+          />
+        </div>
       </div>
     </div>
 

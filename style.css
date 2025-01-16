@@ -76,6 +76,21 @@ p {
     padding: 1 10px;
 }
 
+.convert {
+    margin-bottom: 20px;
+}
+
+.convert .btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.api-keys {
+    width: 100%;
+    text-align: center;
+}
+
 select:focus, input:focus, button:focus {
     outline: 0;
 }
