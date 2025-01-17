@@ -29,8 +29,19 @@ async function loadApiKeys() {
     }
 }
 
+document.getElementById('register-keys').addEventListener('click', function() {
+    // Get the value of the currency API key input field
+    const currencyApiKey = document.getElementById('currency-api-key').value;
+    const conversionApiKey = document.getElementById('conversion-api-key').value;
 
-// Refactor loadCurrencies to use async/await
+    // Check if the currency API key is provided
+    if (currencyApiKey && conversionApiKey) {
+        loadCurrencies(); // Trigger loadCurrencies if the API key is provided
+    } else {
+        alert("Please enter API keys");
+    }
+});
+
 async function loadCurrencies() {
     const cacheKey = 'currenciesData';
     const cacheTimeKey = 'currenciesCacheTime';
@@ -66,7 +77,6 @@ function getSelectedCurrencies() {
     return { currencyOne, currencyTwo };
 }
 
-// Refactor loadConversion to use async/await with the new API endpoint
 async function loadConversion(fromCurrency, toCurrency, amount) {
     try {
         const apiKey = await loadApiKeys();
@@ -94,8 +104,6 @@ async function loadConversion(fromCurrency, toCurrency, amount) {
     }
 }
 
-
-// Refactor populateSelectOptions to use async/await
 async function populateSelectOptions() {
     const { currencyOne, currencyTwo } = getSelectedCurrencies();
 
@@ -130,7 +138,6 @@ async function populateSelectOptions() {
     }
 }
 
-// Handle the convert action using async/await
 document.getElementById("convert").addEventListener("click", async () => {
     const { currencyOne, currencyTwo } = getSelectedCurrencies();
     const amountOne = document.getElementById("amount-one").value;
@@ -161,7 +168,6 @@ document.getElementById("convert").addEventListener("click", async () => {
     }
 });
 
-// Function to handle the swap action using async/await
 document.getElementById("swap").addEventListener("click", async () => {
     const { currencyOne, currencyTwo } = getSelectedCurrencies();
     const amountOne = document.getElementById("amount-one").value;
@@ -197,5 +203,4 @@ document.getElementById("swap").addEventListener("click", async () => {
     }
 });
 
-// Call the function to populate the selects
 populateSelectOptions();
