@@ -35,8 +35,9 @@ document.getElementById('register-keys').addEventListener('click', function() {
     const conversionApiKey = document.getElementById('conversion-api-key').value;
 
     // Check if the currency API key is provided
+    // and populate the currencies
     if (currencyApiKey && conversionApiKey) {
-        loadCurrencies(); // Trigger loadCurrencies if the API key is provided
+        populateSelectOptions();
     } else {
         alert("Please enter API keys");
     }
@@ -202,5 +203,3 @@ document.getElementById("swap").addEventListener("click", async () => {
         console.error("Error fetching conversion data:", error);
     }
 });
-
-populateSelectOptions();
